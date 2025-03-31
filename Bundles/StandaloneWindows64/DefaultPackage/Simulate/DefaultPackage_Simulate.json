@@ -8,7 +8,7 @@
     "BuildPipeline": "EditorSimulateBuildPipeline",
     "PackageName": "DefaultPackage",
     "PackageVersion": "Simulate",
-    "PackageNote": "2025/3/31 16:08:21",
+    "PackageNote": "2025/3/31 16:42:53",
     "AssetList": [
         {
             "Address": "music_background",
@@ -265,7 +265,7 @@
         {
             "BundleName": "assets_samples_space_shooter_gameres_audio.bundle",
             "UnityCRC": 0,
-            "FileHash": "073b13c9c307242cd074b0af08d5d328",
+            "FileHash": "9ac1ccf2c4a9c9547c18db02180c52f4",
             "FileCRC": "00000000",
             "FileSize": 3103096,
             "Encrypted": false,
@@ -275,9 +275,9 @@
         {
             "BundleName": "assets_samples_space_shooter_gameres_effect.bundle",
             "UnityCRC": 0,
-            "FileHash": "17440bcae9698632fda6e44ebb9fbd50",
+            "FileHash": "803995b52ae4b1452b202697611f30c0",
             "FileCRC": "00000000",
-            "FileSize": 2303180,
+            "FileSize": 2398266,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -285,9 +285,9 @@
         {
             "BundleName": "assets_samples_space_shooter_gameres_entity.bundle",
             "UnityCRC": 0,
-            "FileHash": "3320e18ea6b95db5475cea7d8674301c",
+            "FileHash": "c641f454a34dd0dd86100e04d611800a",
             "FileCRC": "00000000",
-            "FileSize": 378176,
+            "FileSize": 393695,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -295,9 +295,9 @@
         {
             "BundleName": "assets_samples_space_shooter_gameres_scene_scene_battle.bundle",
             "UnityCRC": 0,
-            "FileHash": "0c1efc9dd8ce33a818f8cb8eb0723c73",
+            "FileHash": "1c75c976b3d660a9914afda6e714369b",
             "FileCRC": "00000000",
-            "FileSize": 285966,
+            "FileSize": 297568,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -305,9 +305,9 @@
         {
             "BundleName": "assets_samples_space_shooter_gameres_scene_scene_battlesettings.bundle",
             "UnityCRC": 0,
-            "FileHash": "d3300bf1f9767a490c2570f331aac583",
+            "FileHash": "f2ad27a6314c140782f6792c3bee8728",
             "FileCRC": "00000000",
-            "FileSize": 1761,
+            "FileSize": 1824,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -315,9 +315,9 @@
         {
             "BundleName": "assets_samples_space_shooter_gameres_scene_scene_home.bundle",
             "UnityCRC": 0,
-            "FileHash": "92ff6bf04a1e595d3648e626339f7a40",
+            "FileHash": "1ffd83ad392a63d6bd2a943609f31521",
             "FileCRC": "00000000",
-            "FileSize": 18412,
+            "FileSize": 19070,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -325,9 +325,9 @@
         {
             "BundleName": "assets_samples_space_shooter_gameres_scene_scene_homesettings.bundle",
             "UnityCRC": 0,
-            "FileHash": "84e53fcfe7e71b5a92ce59da2812d3b0",
+            "FileHash": "8f9ef62474ece471641a25cb9a9b95e5",
             "FileCRC": "00000000",
-            "FileSize": 1758,
+            "FileSize": 1821,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
@@ -335,9 +335,9 @@
         {
             "BundleName": "assets_samples_space_shooter_gameres_uipanel.bundle",
             "UnityCRC": 0,
-            "FileHash": "0502bea1029407d2646fa69662f85960",
+            "FileHash": "968b6ae8dc6551841caaa0731761b720",
             "FileCRC": "00000000",
-            "FileSize": 76718,
+            "FileSize": 79329,
             "Encrypted": false,
             "Tags": [],
             "DependBundleIDs": []
