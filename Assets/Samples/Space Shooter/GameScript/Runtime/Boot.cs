@@ -11,7 +11,9 @@ public class Boot : MonoBehaviour
     /// 资源系统运行模式
     /// </summary>
     public EPlayMode PlayMode = EPlayMode.EditorSimulateMode;
-
+    public Transform Top;
+    public Transform Normal;
+    public Transform Back;
     void Awake()
     {
         Debug.Log($"资源系统运行模式：{PlayMode}");
@@ -31,8 +33,8 @@ public class Boot : MonoBehaviour
         YooAssets.Initialize();
 
         // 加载更新页面
-        var go = Resources.Load<GameObject>("PatchWindow");
-        GameObject.Instantiate(go);
+        //var go = Resources.Load<GameObject>("PatchWindow");
+        //GameObject.Instantiate(go);
 
         // 开始补丁更新流程
         var operation = new PatchOperation("DefaultPackage", PlayMode);
@@ -42,8 +44,8 @@ public class Boot : MonoBehaviour
         // 设置默认的资源包
         var gamePackage = YooAssets.GetPackage("DefaultPackage");
         YooAssets.SetDefaultPackage(gamePackage);
-
+        UIManager.Instance.Init(Top,Normal,Back);
         // 切换到主页面场景
-        SceneEventDefine.ChangeToHomeScene.SendEventMessage();
+        SceneEventDefine.StartingScene.SendEventMessage();
     }
 }

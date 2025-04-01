@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 1825957564
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8a846bec97feaf2420dcf9fced5c72c4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 79bfbbfb45a737124c4c276d36f44713
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 8a846bec97feaf2420dcf9fced5c72c4
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Animations/CoinBrickAnim/CoinBrickAnim.controller
+- Assets/Samples/Space Shooter/GameRes/Animations/CoinBrickAnim/DarkCoinBrick.controller
+- Assets/Samples/Space Shooter/GameRes/Animations/CoinBrickAnim/DarkCoinBrickAfterHit.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/CoinBrickAnim/CoinBrickAfterHit.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/CoinBrickAnim/DarkCoinBrickSparkle.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/CoinBrickAnim/CoinBrickSparkle.anim
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle

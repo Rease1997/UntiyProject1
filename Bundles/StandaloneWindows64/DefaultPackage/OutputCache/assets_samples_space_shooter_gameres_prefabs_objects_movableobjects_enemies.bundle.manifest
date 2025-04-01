@@ -1,0 +1,48 @@
+ManifestFileVersion: 0
+CRC: 2813580248
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ef1848839dfcb5fdfe28ec4fd39bf207
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0ba9cbf2234284a781965a4625a43153
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ef1848839dfcb5fdfe28ec4fd39bf207
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/MovableObjects/Enemies/CastleGoomba.prefab
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/MovableObjects/Enemies/Koopa.prefab
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/MovableObjects/Enemies/Piranha.prefab
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/MovableObjects/Enemies/DarkGoomba.prefab
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/MovableObjects/Enemies/Goomba.prefab
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_animations_enemiesanim_goombaamin.bundle
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_animations_enemiesanim_koopaanim.bundle
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_animations_enemiesanim_piranhaanim.bundle
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle

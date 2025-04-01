@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 2364854549
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d4b4c74c27c12a442dc90c3b94b08f70
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4b8fe1a60cc05eed8f66137d15524f96
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d4b4c74c27c12a442dc90c3b94b08f70
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/BackgroundObjects/Bushes/Bush3.prefab
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/BackgroundObjects/Bushes/Bush1.prefab
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/BackgroundObjects/Bushes/Bush2.prefab
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle

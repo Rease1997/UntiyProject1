@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 2170875177
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7d7238d6be9df951142056b4099ff830
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: acc87f5f41cb638dcdccc8ca554b5154
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 7d7238d6be9df951142056b4099ff830
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Font/Font2.ttf
+- Assets/Samples/Space Shooter/GameRes/Font/Font1.ttf
+Dependencies: []

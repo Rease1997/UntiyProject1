@@ -28,8 +28,8 @@ public class GameManager
     private GameManager()
     {
         // 注册监听事件
-        _eventGroup.AddListener<SceneEventDefine.ChangeToHomeScene>(OnHandleEventMessage);
-        _eventGroup.AddListener<SceneEventDefine.ChangeToBattleScene>(OnHandleEventMessage);
+        _eventGroup.AddListener<SceneEventDefine.StartingScene>(OnHandleEventMessage);
+        _eventGroup.AddListener<SceneEventDefine.Scene1_1>(OnHandleEventMessage);
     }
 
     /// <summary>
@@ -45,13 +45,30 @@ public class GameManager
     /// </summary>
     private void OnHandleEventMessage(IEventMessage message)
     {
-        if (message is SceneEventDefine.ChangeToHomeScene)
+        SceneHandle operationHandle = null;
+        string uiName = null;
+        if (message is SceneEventDefine.StartingScene)
         {
-            YooAssets.LoadSceneAsync("scene_home");
+            operationHandle = YooAssets.LoadSceneAsync("StartingScene");
+            uiName = "StartPanel";
         }
-        else if (message is SceneEventDefine.ChangeToBattleScene)
+        else if (message is SceneEventDefine.Scene1_1)
         {
-            YooAssets.LoadSceneAsync("scene_battle");
+            operationHandle = YooAssets.LoadSceneAsync("Scene1_1");
+            uiName = "LoadingPanel";
         }
+        if (operationHandle == null) return;
+        operationHandle.Completed += (op) =>
+        {
+            if (op.Status == EOperationStatus.Succeed)
+            {
+                //打开界面
+                UIManager.Instance.OpenWindow(uiName);
+            }
+            else
+            {
+                Debug.LogError("Scene Failed to Load");
+            }
+        };
     }
 }

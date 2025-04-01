@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 3707440347
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e648e05e25453d812703dc5179264614
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4b8fe1a60cc05eed8f66137d15524f96
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: e648e05e25453d812703dc5179264614
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/BackgroundObjects/Lava/Lava.prefab
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/BackgroundObjects/Lava/LavaWaveBig.prefab
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/BackgroundObjects/Lava/LavaWaveSmall.prefab
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle

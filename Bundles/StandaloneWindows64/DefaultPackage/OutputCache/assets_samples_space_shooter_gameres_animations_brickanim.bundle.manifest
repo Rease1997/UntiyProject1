@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 3152436522
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: daa68dcd3c4222da666a202064d56d18
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 79bfbbfb45a737124c4c276d36f44713
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: daa68dcd3c4222da666a202064d56d18
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/BrickIdle.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/BrickBreak.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/DarkBrickBreak.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/DarkBrickSpecialAfterHit.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/DarkBrickAfterHit.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/BrickAnim.controller
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/DarkBrickSpecialFinalHit.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/BrickAfterHit.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/DarkBrickIdle.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/BrickSpecialAfterhit.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/BrickSpecialFinalHit.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/BrickAnim/DarkBrick.controller
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle

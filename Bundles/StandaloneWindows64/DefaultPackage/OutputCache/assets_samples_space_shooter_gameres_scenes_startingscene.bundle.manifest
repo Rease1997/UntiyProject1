@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 2606781642
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 5f0ed97dd78cc22afb1fdefa3db902a7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 75b56a7360e8eda467ffda5c4583dbd6
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 5f0ed97dd78cc22afb1fdefa3db902a7
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Scenes/StartingScene.unity
+Dependencies: []

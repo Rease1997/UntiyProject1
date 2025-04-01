@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 1916523578
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 542d11d8ec73800cf305ad074dc31f15
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0314674c095a731c5b1e6f91323ca13d
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 542d11d8ec73800cf305ad074dc31f15
+HashAppended: 0
+ClassTypes:
+- Class: 62
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Materials/Slipper.physicsMaterial2D
+Dependencies: []

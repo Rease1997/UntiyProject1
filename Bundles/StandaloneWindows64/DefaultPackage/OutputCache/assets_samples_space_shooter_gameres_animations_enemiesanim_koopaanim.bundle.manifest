@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 73987281
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 96df227c55f793f6a781ae3c12364cb1
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 79bfbbfb45a737124c4c276d36f44713
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 96df227c55f793f6a781ae3c12364cb1
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/KoopaAnim/KoopaWalk.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/KoopaAnim/KoopaDie.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/KoopaAnim/Koopa.controller
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle

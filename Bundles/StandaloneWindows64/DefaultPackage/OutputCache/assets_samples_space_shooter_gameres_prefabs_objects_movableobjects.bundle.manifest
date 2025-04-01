@@ -1,0 +1,43 @@
+ManifestFileVersion: 0
+CRC: 3385514986
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2a5b1b24ef777fb8096b2044b3a5ec8f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6fff8fe7fd1b4491449784c364db6da2
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 2a5b1b24ef777fb8096b2044b3a5ec8f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 62
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Prefabs/Objects/MovableObjects/Fireball1.prefab
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_animations_playerfireballanim.bundle
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/share_assets_samples_space_shooter_gameres_materials.bundle

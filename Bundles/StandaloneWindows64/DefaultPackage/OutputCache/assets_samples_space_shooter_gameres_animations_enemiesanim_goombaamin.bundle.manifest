@@ -1,0 +1,33 @@
+ManifestFileVersion: 0
+CRC: 2254443323
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: a5c67f1efdf1160a84958ec7c8a8c24d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 79bfbbfb45a737124c4c276d36f44713
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: a5c67f1efdf1160a84958ec7c8a8c24d
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/CastleGoombaDie.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/DarkGoomba.controller
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/GoombaAnim.controller
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/CastleGoombaWalk.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/GoombaDie.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/DarkGoombaDie.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/DarkGoombaWalk.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/GoombaWalk.anim
+- Assets/Samples/Space Shooter/GameRes/Animations/EnemiesAnim/GoombaAmin/CastleGoomba.controller
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle

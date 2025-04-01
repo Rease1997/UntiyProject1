@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 4210063281
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 01ab965f685eb12072c407a5ddcfdf69
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f267fd2d8bcb1179236b6179ac5313bc
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 01ab965f685eb12072c407a5ddcfdf69
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Sprites/misc-4.gif
+- Assets/Samples/Space Shooter/GameRes/Sprites/misc-3.gif
+- Assets/Samples/Space Shooter/GameRes/Sprites/FAVPNG_super-mario-bros-3-new-super-mario-bros-logo_Ta9fDTa4.png
+- Assets/Samples/Space Shooter/GameRes/Sprites/characters.gif
+Dependencies: []

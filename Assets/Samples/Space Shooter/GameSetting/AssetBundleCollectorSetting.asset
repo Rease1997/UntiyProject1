@@ -24,88 +24,46 @@ MonoBehaviour:
     AutoCollectShaders: 1
     IgnoreRuleName: NormalIgnoreRule
     Groups:
-    - GroupName: battle
-      GroupDesc: "\u6218\u6597"
-      AssetTags: battle
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/Effect
-        CollectorGUID: 80d76514758554baaa96a9efffe9f3ef
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/Entity
-        CollectorGUID: 4d7c84745db8e884f8020a8c5356e67c
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/Audio
-        CollectorGUID: 306075fbe00b24251b6c889984a7a7d5
-        CollectorType: 0
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/EffectArt
-        CollectorGUID: 08d38891fe56f75448d95b93bf3e6c5c
-        CollectorType: 2
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/EntityArt
-        CollectorGUID: b79178f10b84c764f8c91480b4fdabe8
-        CollectorType: 2
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-    - GroupName: shader
-      GroupDesc: "\u7740\u8272\u5668"
-      AssetTags: 
-      ActiveRuleName: EnableGroup
-      Collectors:
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/Shader
-        CollectorGUID: 08b316670a5365349bbdfb4a41c71ce6
-        CollectorType: 1
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackShader
-        FilterRuleName: CollectShader
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/ShaderVariants
-        CollectorGUID: 00781758c26692e40a9634ddeac838be
-        CollectorType: 1
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackShaderVariants
-        FilterRuleName: CollectShaderVariants
-        AssetTags: 
-        UserData: 
     - GroupName: scene
       GroupDesc: "\u573A\u666F"
       AssetTags: scene
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/Scene
-        CollectorGUID: 6070eae1192f2994887f2983a177d503
+      - CollectPath: Assets/Samples/Space Shooter/GameRes/Scenes
+        CollectorGUID: a0a73384d18175c46a8d48d8be51fb62
         CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackSeparately
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/SceneArt
-        CollectorGUID: 79d1889926b73c24a90c17cc41b46cc6
+      - CollectPath: Assets/Samples/Space Shooter/GameRes/Animations
+        CollectorGUID: 8fd2be455c8b3944688bb131427d6df5
         CollectorType: 2
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/Samples/Space Shooter/GameRes/Font
+        CollectorGUID: 46757d5f244baed4d8eec62db88e91ff
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/Samples/Space Shooter/GameRes/Prefabs
+        CollectorGUID: 5e1f697f30304834ba3e9ad8223c1eb9
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/Samples/Space Shooter/GameRes/Sprites
+        CollectorGUID: 289d6300153ba9841a4d8dd442d84d7c
+        CollectorType: 0
         AddressRuleName: AddressByFileName
         PackRuleName: PackDirectory
         FilterRuleName: CollectAll
@@ -116,27 +74,11 @@ MonoBehaviour:
       AssetTags: ui
       ActiveRuleName: EnableGroup
       Collectors:
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/UIPanel
-        CollectorGUID: 12d33f33f3a55224c9c747d7bffa1c68
+      - CollectPath: Assets/Samples/Space Shooter/GameRes/UIPrefab
+        CollectorGUID: 705efa531b7ee434abae4ec6c8586647
         CollectorType: 0
         AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/UIPanelArt
-        CollectorGUID: 7996e995574af62488d65dd4610c2478
-        CollectorType: 2
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
-        FilterRuleName: CollectAll
-        AssetTags: 
-        UserData: 
-      - CollectPath: Assets/Samples/Space Shooter/GameRes/UIFont
-        CollectorGUID: 464727a15e4a7dc4d895346374432399
-        CollectorType: 2
-        AddressRuleName: AddressByFileName
-        PackRuleName: PackDirectory
+        PackRuleName: PackSeparately
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 

@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 4267079631
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 445380400bb44ffc726be7f68617b5a2
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 75b56a7360e8eda467ffda5c4583dbd6
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 445380400bb44ffc726be7f68617b5a2
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 104
+  Script: {instanceID: 0}
+- Class: 157
+  Script: {instanceID: 0}
+- Class: 196
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Scenes/LoadingScene.unity
+Dependencies: []

@@ -1,0 +1,26 @@
+ManifestFileVersion: 0
+CRC: 585517891
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ed0a175296dd2e6786e827a0f6ecd7f6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 79bfbbfb45a737124c4c276d36f44713
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ed0a175296dd2e6786e827a0f6ecd7f6
+HashAppended: 0
+ClassTypes:
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Samples/Space Shooter/GameRes/Animations/CoinAnim/Coin.controller
+- Assets/Samples/Space Shooter/GameRes/Animations/CoinAnim/CoinSparkle.anim
+Dependencies:
+- D:/UnityProject/UntiyProject1/Bundles/StandaloneWindows64/DefaultPackage/OutputCache/assets_samples_space_shooter_gameres_sprites.bundle
