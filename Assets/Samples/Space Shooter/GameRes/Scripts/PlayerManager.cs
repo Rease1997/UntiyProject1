@@ -9,9 +9,7 @@ public class PlayerManager : MonoBehaviour
     //玩家碰到地面的
     bool _isJump = false;
     Transform enemyParent;
-    bool isenemy = true;
     List<Enemy> enemyList = new List<Enemy>();
-    Enemy enemy = new Enemy();
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +19,14 @@ public class PlayerManager : MonoBehaviour
         _playAnim = GetComponent<Animator>();
         //敌人预制体父节点
         enemyParent = GameObject.Find("Goombas").transform;
+
         if (enemyParent != null)
         {
             for (int i = 0; i < enemyParent.childCount; i++)
             {
                 // 获取第 i 个子节点的 Transform
                 Transform childTransform = enemyParent.GetChild(i);
+                Enemy enemy = new Enemy();
                 enemy.Init(childTransform);
                 enemyList.Add(enemy);
             }
