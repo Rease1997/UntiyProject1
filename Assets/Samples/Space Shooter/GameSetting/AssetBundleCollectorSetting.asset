@@ -82,3 +82,24 @@ MonoBehaviour:
         FilterRuleName: CollectAll
         AssetTags: 
         UserData: 
+    - GroupName: player
+      GroupDesc: "\u73A9\u5BB6"
+      AssetTags: prefab
+      ActiveRuleName: EnableGroup
+      Collectors:
+      - CollectPath: Assets/Samples/Space Shooter/GameRes/Player/Player.prefab
+        CollectorGUID: 2a2addac90ed74fabb168b9cf9fa008c
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackSeparately
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
+      - CollectPath: Assets/Samples/Space Shooter/GameRes/Player/PlayerAnim
+        CollectorGUID: 0fa4942132b7b495eb8a32fe62ab29eb
+        CollectorType: 0
+        AddressRuleName: AddressByFileName
+        PackRuleName: PackDirectory
+        FilterRuleName: CollectAll
+        AssetTags: 
+        UserData: 
