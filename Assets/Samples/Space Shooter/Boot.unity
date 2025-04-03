@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 89002058}
   - component: {fileID: 89002057}
   - component: {fileID: 89002056}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 931543217}
   - component: {fileID: 931543216}
   - component: {fileID: 931543215}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 1926246751}
   - component: {fileID: 1926246750}
   - component: {fileID: 1926246749}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,10 +672,10 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 10
-  m_Depth: 0
+  m_Depth: 2
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0

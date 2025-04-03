@@ -17,7 +17,7 @@ public class GameManager
         }
     }
 
-    private readonly EventGroup _eventGroup = new EventGroup();
+    public readonly EventGroup _eventGroup = new EventGroup();
 
     /// <summary>
     /// 协程启动器
@@ -30,6 +30,7 @@ public class GameManager
         // 注册监听事件
         _eventGroup.AddListener<SceneEventDefine.StartingScene>(OnHandleEventMessage);
         _eventGroup.AddListener<SceneEventDefine.Scene1_1>(OnHandleEventMessage);
+
     }
 
     /// <summary>

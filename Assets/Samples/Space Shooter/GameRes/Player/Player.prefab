@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1585264833500063697}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Fireballs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 4510656188418952238}
   - component: {fileID: 558512701000548605}
   - component: {fileID: 7079377461122702781}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SmallMarioCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 7893666250894920285}
   - component: {fileID: 4458758359380359516}
   - component: {fileID: 7883137512978786778}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BigMarioCollider
   m_TagString: BigPlayer
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5562541293077248256}
   - component: {fileID: 5562541293077248271}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SmallMarioAnimations
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 5562541293349834301}
   - component: {fileID: 7430666573908258158}
   - component: {fileID: 5867493018416411209}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 14817616037679195}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: PlayerCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5054532408108372261}
   - component: {fileID: 1339337044728742395}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BigMarioAnimations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 903607213494254244}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Animations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
