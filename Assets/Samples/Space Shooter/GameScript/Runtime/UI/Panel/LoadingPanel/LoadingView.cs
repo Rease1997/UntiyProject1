@@ -11,6 +11,11 @@ public class LoadingView : ViewBase
     float countDown;//倒计时
     bool isFirst;//是否第一次生成玩家 不是第一次的话复活玩家
     int hp = 3;
+    GameObject player;
+    BoxCollider2D playercollider;
+    Transform playerTrans;
+    PlayerManager playermanager;
+    EdgeCollider2D edgeplayercollider;
     public override void Init(UIWindow uiBase)
     {
         base.Init(uiBase);
@@ -46,11 +51,14 @@ public class LoadingView : ViewBase
     /// <summary>
     /// 玩家生成并附加脚本
     /// </summary>
-    private static void CreatePlayer()
+    private void CreatePlayer()
     {
         GameObject play = YooAssets.LoadAssetSync<GameObject>("Player").AssetObject as GameObject;
-        GameObject player = GameObject.Instantiate(play);
-        player.AddComponent<PlayerManager>();
+        player = GameObject.Instantiate(play);
+        playercollider = player.transform.GetChild(1).Find("SmallMarioCollider").GetComponent<BoxCollider2D>();
+        edgeplayercollider = player.transform.GetChild(1).Find("SmallMarioCollider").GetComponent<EdgeCollider2D>();
+        playerTrans = player.transform;
+        playermanager = player.AddComponent<PlayerManager>();
     }
 
     public override void Update()
@@ -71,6 +79,10 @@ public class LoadingView : ViewBase
                         //关闭LoadingPanel界面
                         UIManager.Instance.CloseWindow("LoadingPanel");
                         //再开一次 初始化玩家位置
+                        player.transform.position = playerTrans.position;
+                        playercollider.enabled = true;
+                        edgeplayercollider.enabled = true;
+                        playermanager.Enemyentities();
                     }
                     else
                     {

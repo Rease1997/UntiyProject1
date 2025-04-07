@@ -6,6 +6,7 @@ using YooAsset;
 
 public class GameManager
 {
+    bool _isScene = false;
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -56,7 +57,10 @@ public class GameManager
         else if (message is SceneEventDefine.Scene1_1)
         {
             operationHandle = YooAssets.LoadSceneAsync("Scene1_1");
-            uiName = "LoadingPanel";
+            if (!_isScene)
+            {
+                uiName = "LoadingPanel";
+            }
         }
         if (operationHandle == null) return;
         operationHandle.Completed += (op) =>

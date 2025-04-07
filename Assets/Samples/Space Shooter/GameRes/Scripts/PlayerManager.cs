@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UniFramework.Event;
@@ -14,9 +15,15 @@ public class PlayerManager : MonoBehaviour, IEventMessage
     //判断是否关闭敌人脚本的Update方法
     bool _isenemy = true;
     Transform enemyParent;
+    //记录敌人的初始位置
+    List<Transform> enemyTrans = new List<Transform>();
     List<Enemy> enemyList = new List<Enemy>();
     //声明相机脚本
     MarioCameraFollow maricamera = new MarioCameraFollow();
+    //获取敌人的碰撞框
+    BoxCollider2D enemycollider;
+    //玩家血量
+    bool _isplayerHp;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +40,6 @@ public class PlayerManager : MonoBehaviour, IEventMessage
         //给敌人初始化
         EnemyInit();
     }
-
     /// <summary>
     /// 给敌人初始化脚本
     /// </summary>
@@ -48,6 +54,7 @@ public class PlayerManager : MonoBehaviour, IEventMessage
                 Enemy enemy = new Enemy();
                 enemy.Init(childTransform);
                 enemyList.Add(enemy);
+                enemyTrans.Add(childTransform.transform);
             }
         }
     }
@@ -77,7 +84,16 @@ public class PlayerManager : MonoBehaviour, IEventMessage
                 enemy.Update();
         }
     }
-
+    public void Enemyentities()
+    {
+        _playAnim.SetBool("Dle", false);
+        _isenemy = true; 
+        foreach (var item in enemyList)
+        {
+            item.EnemycolliderClose(enemycollider, false);
+            Debug.Log(enemycollider.name);
+        }
+    }
     /// <summary>
     /// 玩家移动
     /// </summary>
@@ -127,17 +143,23 @@ public class PlayerManager : MonoBehaviour, IEventMessage
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Untagged"))
+        //玩家头顶的砖块
+        if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Brick"))
         {
             _isJump = true;
         }
-        
+        //敌人的身体碰撞框
         if (collision.collider.CompareTag("EnemyBody"))
         {
             _playAnim.SetBool("Dle", true);
             _isenemy = false;
+            // 获取敌人的游戏对象
+            GameObject enemyObject = collision.collider.transform.parent.gameObject;
+            //关闭敌人的碰撞框
+            EnemyColliderClose(enemyObject);
             StartCoroutine(PlayerCollider());
         }
+        //敌人的头顶碰撞框
         if (collision.collider.CompareTag("EnemyHead"))
         {
             // 获取敌人的游戏对象
@@ -150,19 +172,39 @@ public class PlayerManager : MonoBehaviour, IEventMessage
         }
     }
 
+    private void EnemyColliderClose(GameObject enemyObject)
+    {
+        if (enemyObject != null)
+        {
+            enemycollider = enemyObject.transform.Find("Body Collider").GetComponent<BoxCollider2D>();
+            if (!enemycollider)
+            {
+                Debug.Log("找到敌人的碰撞框");
+                foreach (var item in enemyList)
+                {
+                    item.EnemycolliderClose(enemycollider, true);
+                }
+            }
+        }
+    }
+
     IEnumerator PlayerCollider()
     {
         BoxCollider2D playcollider = transform.GetChild(1).Find("SmallMarioCollider").GetComponent<BoxCollider2D>();
+        EdgeCollider2D edgeplayercollider = transform.GetChild(1).Find("SmallMarioCollider").GetComponent<EdgeCollider2D>();
         if (playcollider != null)
         {
             playcollider.enabled = false;
+            edgeplayercollider.enabled = false;
+            Debug.Log("玩家的碰撞框关闭了" + playcollider.name);
         }
         else
         {
             Debug.Log("玩家的碰撞框没有找到");
         }
-        yield return new WaitForSeconds(2f);
         var msg = new PlayerManager();
-        UniEvent.SendMessage(msg);
+        if (playcollider.enabled == false)
+            UniEvent.SendMessage(msg);
+        yield break;
     }
 }
