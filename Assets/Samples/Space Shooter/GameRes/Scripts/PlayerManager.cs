@@ -133,7 +133,9 @@ public class PlayerManager : MonoBehaviour,IEventMessage
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Brick"))
+        //玩家跳跃判断
+        if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Brick")||
+            collision.collider.CompareTag("Pipe")|| collision.collider.CompareTag("Stone"))
         {
             _isJump = true;
         }
@@ -157,6 +159,12 @@ public class PlayerManager : MonoBehaviour,IEventMessage
                 EnemyColliderClose(enemyobj);
             }
         }
+        //玩家碰撞方块出金币
+        if (collision.collider.CompareTag("Untagged"))
+        {
+            Debug.Log("碰到底部了");
+        }
+
     }
 
     private void EnemyColliderClose(GameObject enemyobj)

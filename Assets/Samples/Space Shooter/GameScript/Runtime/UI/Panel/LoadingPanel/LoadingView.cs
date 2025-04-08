@@ -21,7 +21,7 @@ public class LoadingView : ViewBase
     {
         base.Init(uiBase);
         isFirst = true;
-        hp = 1;
+        hp = 3;
     }
 
     public void Init()
