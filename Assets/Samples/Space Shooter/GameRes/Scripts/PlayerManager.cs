@@ -5,25 +5,24 @@ using UniFramework.Event;
 using UnityEngine;
 using static SceneEventDefine;
 
-public class PlayerManager : MonoBehaviour, IEventMessage
+public class PlayerManager : MonoBehaviour,IEventMessage
 {
-    Camera _playerCamera;
     Rigidbody2D _playRig;
     Animator _playAnim;
     //玩家碰到地面的
     bool _isJump = false;
-    //判断是否关闭敌人脚本的Update方法
-    bool _isenemy = true;
+    //敌人父节点
     Transform enemyParent;
-    //记录敌人的初始位置
-    List<Transform> enemyTrans = new List<Transform>();
+    //敌人是否移动
+    bool _isenemy = true;
+    //用来存储敌人脚本
     List<Enemy> enemyList = new List<Enemy>();
-    //声明相机脚本
-    MarioCameraFollow maricamera = new MarioCameraFollow();
-    //获取敌人的碰撞框
-    BoxCollider2D enemycollider;
-    //玩家血量
-    bool _isplayerHp;
+    //相机
+    Camera _mainCamera;
+    //相机脚本
+    MarioCameraFollow marioCamera = new MarioCameraFollow();
+    //玩家碰撞框
+    EdgeCollider2D edge; BoxCollider2D boxd;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,20 +30,23 @@ public class PlayerManager : MonoBehaviour, IEventMessage
         _playRig = GetComponent<Rigidbody2D>();
         //获取玩家的动画组件
         _playAnim = GetComponent<Animator>();
-        //敌人预制体父节点
-        enemyParent = GameObject.Find("Goombas").transform;
-        //获取场景中的摄像机
-        _playerCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
-        maricamera.Init(_playerCamera.transform, transform);
-
-        //给敌人初始化
+        //查找敌人位置，还有初始化敌人脚本
         EnemyInit();
+        //获取相机并初始化相机脚本
+        _mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        marioCamera.Init(_mainCamera.transform, transform);
+        //获取玩家碰撞框
+        boxd = transform.GetChild(1).Find("SmallMarioCollider").GetComponent<BoxCollider2D>();
+        edge = transform.GetChild(1).Find("SmallMarioCollider").GetComponent<EdgeCollider2D>();
     }
+
     /// <summary>
-    /// 给敌人初始化脚本
+    ///查找敌人位置，还有初始化敌人脚本
     /// </summary>
     private void EnemyInit()
     {
+        //敌人预制体父节点
+        enemyParent = GameObject.Find("Goombas").transform;
         if (enemyParent != null)
         {
             for (int i = 0; i < enemyParent.childCount; i++)
@@ -54,7 +56,6 @@ public class PlayerManager : MonoBehaviour, IEventMessage
                 Enemy enemy = new Enemy();
                 enemy.Init(childTransform);
                 enemyList.Add(enemy);
-                enemyTrans.Add(childTransform.transform);
             }
         }
     }
@@ -64,19 +65,17 @@ public class PlayerManager : MonoBehaviour, IEventMessage
     {
         //玩家移动
         PlayerMove();
-        //调用敌人脚本的Update方法
-        EnemyUpdate();
+        EnemyMove();
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
-        //相机跟随玩家
-        maricamera.lateUpdate();
+        marioCamera.lateUpdate();
     }
     /// <summary>
-    /// 调用敌人脚本的方法，使敌人向左一直移动
+    /// 敌人移动方法
     /// </summary>
-    private void EnemyUpdate()
+    private void EnemyMove()
     {
         foreach (Enemy enemy in enemyList)
         {
@@ -84,18 +83,9 @@ public class PlayerManager : MonoBehaviour, IEventMessage
                 enemy.Update();
         }
     }
-    public void Enemyentities()
-    {
-        _playAnim.SetBool("Dle", false);
-        _isenemy = true; 
-        foreach (var item in enemyList)
-        {
-            item.EnemycolliderClose(enemycollider, false);
-            Debug.Log(enemycollider.name);
-        }
-    }
+
     /// <summary>
-    /// 玩家移动
+    /// 玩家移动跳跃
     /// </summary>
     private void PlayerMove()
     {
@@ -143,68 +133,72 @@ public class PlayerManager : MonoBehaviour, IEventMessage
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //玩家头顶的砖块
         if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Brick"))
         {
             _isJump = true;
         }
-        //敌人的身体碰撞框
+        //敌人头部碰撞框
+        if (collision.collider.CompareTag("EnemyHead"))
+        {
+            GameObject enemyobj = collision.collider.transform.parent.gameObject;
+            if (enemyobj != null)
+            {
+                Destroy(enemyobj);
+            }
+        }
+        //敌人身体部分碰撞框
         if (collision.collider.CompareTag("EnemyBody"))
         {
             _playAnim.SetBool("Dle", true);
             _isenemy = false;
-            // 获取敌人的游戏对象
-            GameObject enemyObject = collision.collider.transform.parent.gameObject;
-            //关闭敌人的碰撞框
-            EnemyColliderClose(enemyObject);
-            StartCoroutine(PlayerCollider());
-        }
-        //敌人的头顶碰撞框
-        if (collision.collider.CompareTag("EnemyHead"))
-        {
-            // 获取敌人的游戏对象
-            GameObject enemyObject = collision.collider.transform.parent.gameObject;
-            if (enemyObject != null)
+            GameObject enemyobj = collision.collider.transform.parent.gameObject;
+            if(enemyobj != null)
             {
-                // 销毁敌人的游戏对象
-                Destroy(enemyObject);
+                EnemyColliderClose(enemyobj);
             }
         }
     }
 
-    private void EnemyColliderClose(GameObject enemyObject)
+    private void EnemyColliderClose(GameObject enemyobj)
     {
-        if (enemyObject != null)
+        foreach(var item in enemyList)
         {
-            enemycollider = enemyObject.transform.Find("Body Collider").GetComponent<BoxCollider2D>();
-            if (!enemycollider)
-            {
-                Debug.Log("找到敌人的碰撞框");
-                foreach (var item in enemyList)
-                {
-                    item.EnemycolliderClose(enemycollider, true);
-                }
-            }
+            item.CloseAllCollider(true);
         }
+        StartCoroutine(CloseAllPlayerCollider());
     }
 
-    IEnumerator PlayerCollider()
+    //关闭玩家身上的碰撞框并广播消息
+    private IEnumerator CloseAllPlayerCollider()
     {
-        BoxCollider2D playcollider = transform.GetChild(1).Find("SmallMarioCollider").GetComponent<BoxCollider2D>();
-        EdgeCollider2D edgeplayercollider = transform.GetChild(1).Find("SmallMarioCollider").GetComponent<EdgeCollider2D>();
-        if (playcollider != null)
+        yield return new WaitForSeconds(0.3f);
+        //关闭玩家碰撞框
+        if (boxd != null && edge != null)
         {
-            playcollider.enabled = false;
-            edgeplayercollider.enabled = false;
-            Debug.Log("玩家的碰撞框关闭了" + playcollider.name);
-        }
-        else
-        {
-            Debug.Log("玩家的碰撞框没有找到");
+            boxd.enabled = false;
+            edge.enabled = false;
         }
         var msg = new PlayerManager();
-        if (playcollider.enabled == false)
-            UniEvent.SendMessage(msg);
+        UniEvent.SendMessage(msg);
         yield break;
+    }
+
+    //打开敌人和玩家身上的碰撞框
+    internal void openAllCollider()
+    {
+        _playAnim.SetBool("Dle", false);
+        _isenemy = true;
+        //打开敌人碰撞框   
+        foreach (var item in enemyList)
+        {
+            item.CloseAllCollider(false);
+            item.EnemyPos();
+        }
+        //打开玩家碰撞框
+        if (boxd != null && edge != null)
+        {
+            boxd.enabled = true;
+            edge.enabled = true;
+        }
     }
 }

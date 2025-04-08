@@ -10,17 +10,18 @@ public class LoadingView : ViewBase
     bool isCountDown = false;//是否开启倒计时
     float countDown;//倒计时
     bool isFirst;//是否第一次生成玩家 不是第一次的话复活玩家
-    int hp = 3;
+    int hp;
     GameObject player;
     BoxCollider2D playercollider;
-    Transform playerTrans;
+    Vector3 playerPos;
     PlayerManager playermanager;
     EdgeCollider2D edgeplayercollider;
+    bool _isonEnable = false;
     public override void Init(UIWindow uiBase)
     {
         base.Init(uiBase);
         isFirst = true;
-        hp = 3;
+        hp = 1;
     }
 
     public void Init()
@@ -31,21 +32,28 @@ public class LoadingView : ViewBase
         GameManager.Instance._eventGroup.AddListener<PlayerManager>(OpenEventMessage);
         UIManager.Instance.CloseWindow("LoadingPanel");
         isFirst = false;
+        _isonEnable = true;
     }
 
+    int count = 0;
     public override void OnEnable()
     {
         base.OnEnable();
         isCountDown = true;
         countDown = 3;
+        if (_isonEnable)
+        {
+            hp--;
+            Debug.Log(hp + "  当前血量");
+        }
+        count++;
+        Debug.Log("计算" + count);
     }
 
     private void OpenEventMessage(IEventMessage message)
     {
         Debug.Log("打开LoadingPanel界面");
         UIManager.Instance.OpenWindow("LoadingPanel");
-        hp--;
-        Debug.Log(hp + "  当前血量");
     }
 
     /// <summary>
@@ -55,9 +63,8 @@ public class LoadingView : ViewBase
     {
         GameObject play = YooAssets.LoadAssetSync<GameObject>("Player").AssetObject as GameObject;
         player = GameObject.Instantiate(play);
-        playercollider = player.transform.GetChild(1).Find("SmallMarioCollider").GetComponent<BoxCollider2D>();
-        edgeplayercollider = player.transform.GetChild(1).Find("SmallMarioCollider").GetComponent<EdgeCollider2D>();
-        playerTrans = player.transform;
+        //获取玩家生成时的位置
+        playerPos = player.transform.localPosition;
         playermanager = player.AddComponent<PlayerManager>();
     }
 
@@ -78,16 +85,17 @@ public class LoadingView : ViewBase
                     {
                         //关闭LoadingPanel界面
                         UIManager.Instance.CloseWindow("LoadingPanel");
-                        //再开一次 初始化玩家位置
-                        player.transform.position = playerTrans.position;
-                        playercollider.enabled = true;
-                        edgeplayercollider.enabled = true;
-                        playermanager.Enemyentities();
+                        //在这让玩家复活 还原玩家的初始位置
+                        player.transform.position = playerPos;
+                        playermanager.openAllCollider();
                     }
-                    else
+                    else 
                     {
+                        //关闭LoadingPanel界面
+                        UIManager.Instance.CloseWindow("LoadingPanel");
                         Debug.Log("死翘翘了");
                         //回到主场景
+                        SceneEventDefine.StartingScene.SendEventMessage();
                     }
                 }
             }
