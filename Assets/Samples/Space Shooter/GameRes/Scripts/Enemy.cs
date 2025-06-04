@@ -19,17 +19,20 @@ public class Enemy
     //碰撞框的打开关闭
     public void CloseAllCollider(bool isCollider)
     {
-        for (int i = 0; i < enemy.childCount; i++)
+        if (enemy != null)
         {
-            if(isCollider)
+            for (int i = 0; i < enemy.childCount; i++)
             {
-                BoxCollider2D boxd = enemy.GetChild(i).transform.GetComponent<BoxCollider2D>();
-                boxd.enabled = false;
-            }
-            else
-            {
-                BoxCollider2D boxd = enemy.GetChild(i).transform.GetComponent<BoxCollider2D>();
-                boxd.enabled = true;
+                if (isCollider)
+                {
+                    BoxCollider2D boxd = enemy.GetChild(i).transform.GetComponent<BoxCollider2D>();
+                    boxd.enabled = false;
+                }
+                else if (!isCollider)
+                {
+                    BoxCollider2D boxd = enemy.GetChild(i).transform.GetComponent<BoxCollider2D>();
+                    boxd.enabled = true;
+                }
             }
         }
     }

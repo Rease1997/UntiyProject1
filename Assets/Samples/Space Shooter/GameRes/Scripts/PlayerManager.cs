@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UniFramework.Event;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static SceneEventDefine;
 
 public class PlayerManager : MonoBehaviour,IEventMessage
@@ -23,6 +24,8 @@ public class PlayerManager : MonoBehaviour,IEventMessage
     MarioCameraFollow marioCamera = new MarioCameraFollow();
     //玩家碰撞框
     EdgeCollider2D edge; BoxCollider2D boxd;
+
+    public float jumpHeight = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +70,7 @@ public class PlayerManager : MonoBehaviour,IEventMessage
         PlayerMove();
         EnemyMove();
     }
-
+    
     private void LateUpdate()
     {
         marioCamera.lateUpdate();
@@ -120,7 +123,7 @@ public class PlayerManager : MonoBehaviour,IEventMessage
             if (Input.GetKeyDown(KeyCode.W))
             {
                 //在这修改玩家的位置向上移动3
-                _playRig.velocity = new Vector2(_playRig.velocity.x, 21);
+                _playRig.velocity = new Vector2(_playRig.velocity.x, 24);
                 _playAnim.SetBool("jump", true);
                 _isJump = false;
             }
@@ -133,6 +136,7 @@ public class PlayerManager : MonoBehaviour,IEventMessage
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         //玩家跳跃判断
         if (collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Brick")||
             collision.collider.CompareTag("Pipe")|| collision.collider.CompareTag("Stone"))
@@ -160,11 +164,26 @@ public class PlayerManager : MonoBehaviour,IEventMessage
             }
         }
         //玩家碰撞方块出金币
-        if (collision.collider.CompareTag("Untagged"))
+        if (collision.collider.CompareTag("Untagged")|| collision.collider.CompareTag("PowerBrick"))
         {
-            Debug.Log("碰到底部了");
+            GameObject coinBrick = collision.collider.gameObject;
+            if(coinBrick != null)
+            {
+                Vector3 currentPosition = coinBrick.transform.position;
+                currentPosition.y += jumpHeight;
+                coinBrick.transform.position = currentPosition;
+                StartCoroutine(Positionrestoration(coinBrick));
+            }
         }
 
+    }
+
+    private IEnumerator Positionrestoration(GameObject coinBrick)
+    {
+        yield return new WaitForSeconds(0.1f);
+        Vector3 currentPosition = coinBrick.transform.position;
+        currentPosition.y -= jumpHeight;
+        coinBrick.transform.position = currentPosition;
     }
 
     private void EnemyColliderClose(GameObject enemyobj)
@@ -179,16 +198,15 @@ public class PlayerManager : MonoBehaviour,IEventMessage
     //关闭玩家身上的碰撞框并广播消息
     private IEnumerator CloseAllPlayerCollider()
     {
-        yield return new WaitForSeconds(0.3f);
         //关闭玩家碰撞框
         if (boxd != null && edge != null)
         {
             boxd.enabled = false;
             edge.enabled = false;
         }
+        yield return new WaitForSeconds(0.3f);
         var msg = new PlayerManager();
         UniEvent.SendMessage(msg);
-        yield break;
     }
 
     //打开敌人和玩家身上的碰撞框
